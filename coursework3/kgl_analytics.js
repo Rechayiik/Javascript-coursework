@@ -81,12 +81,15 @@ console.log(`Unique dealers: ${getUniqueDealers(procurementRecords)}`);
 
 
 // 6.*******************************
-let roles = new Set('Manager', 'Director')
+const authorizedRoles = new Set(['Manager', 'Director']);
+
 function isAuthorizedForProcurement(userRole) {
-    roles.has(userRole)
+    return authorizedRoles.has(userRole)
 }
 
-console.log(isAuthorizedForProcurement('Manager'));
+console.log(`Is manager authorized? ${isAuthorizedForProcurement('Manager')}`);
+console.log(`Is Director authorized? ${isAuthorizedForProcurement('Director')}`);
+console.log(`Is Sales Agent authorized? ${isAuthorizedForProcurement('Sales Agent')}`);
 
 //                  PART C
 // 7.******************************
